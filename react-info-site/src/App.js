@@ -1,3 +1,6 @@
+import logo from "./logo.svg";
+import "./App.css";
+
 function UnorderedList() {
   return (
     <ul>
@@ -7,9 +10,4 @@ function UnorderedList() {
   );
 }
 
-ReactDOM.render(
-  <div>
-    <UnorderedList />
-  </div>,
-  document.getElementById("root")
-);
+export default UnorderedList;
