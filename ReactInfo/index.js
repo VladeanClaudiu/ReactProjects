@@ -1,8 +1,10 @@
+// import Header from "./components/Header";
+
 function Header() {
   return (
     <header>
       <nav className="nav">
-        <img src="./images/react-logo.png" width="40px"></img>
+        <img className="react-logo" src="./images/react-logo.png"></img>
         <ul className="nav-list">
           <li>Pricing</li>
           <li>About</li>
@@ -30,7 +32,7 @@ function MainContent() {
 
 function Footer() {
   return (
-    <footer>
+    <footer className="react-footer">
       <small>© 2021 Vladean development. All rights reserved.</small>
     </footer>
   );

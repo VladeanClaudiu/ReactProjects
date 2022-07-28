@@ -2,23 +2,28 @@ html, body {
     margin: 0 auto;
     padding: 10px;
     font-family: 'Courier New', Courier, monospace;
+    display: flex;
 }
 
-.nav{
+.nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.nav > img{
+.react-logo {
     width: 50px;
 }
 
-.nav-list{
+.nav-list {
     list-style: none;
     display: flex;
 }
 
-.nav-list > li{
+.nav-list > li {
     padding: 20px
+}
+
+.react-footer {
+    
 }
