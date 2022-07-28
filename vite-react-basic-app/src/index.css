@@ -1,3 +1,77 @@
+body{
+  margin: 0;
+  background-color: #282D35;
+}
+
 #root {
   font-family: 'Inter', sans-serif;
+  padding: 0; 
+}
+
+.react-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #21222A;
+  padding: 1.5em;
+}
+
+.react-nav > h3 {
+  margin-right: auto;
+  margin-left: .2em;
+  color: #61DAFB;
+  font-weight: 700;
+  font-size: 22.2535px;
+  line-height: 27px;
+  letter-spacing: -0.05em;
+}
+
+.react-nav > h4 {
+  width: 259px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: right;
+  color: #DEEBF8;
+}
+
+.react-logo {
+  width: 40px; 
+}
+
+.main-content {
+  padding: 50px;
+}
+
+.main-content > h1 {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 39.06px;
+  line-height: 47px;
+  letter-spacing: -0.05em;
+  font-style: normal;
+}
+
+.main-content > ul {
+  list-style: none;
+}
+
+.main-content > ul > li::before {
+  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: #61DAFB; /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em;
+  font-size: 20px;
+  
+}
+
+.main-content > ul > li {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 40px;
+  color: #FFFFFF;
 }
