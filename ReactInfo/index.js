@@ -7,9 +7,9 @@ function UnorderedList() {
   );
 }
 
-// ReactDOM.render(
-//   <div>
-//     <UnorderedList />
-//   </div>,
-//   document.getElementById("root")
-// );
+ReactDOM.render(
+  <div>
+    <UnorderedList />
+  </div>,
+  document.getElementById("root")
+);
