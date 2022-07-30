@@ -51,6 +51,7 @@ body{
     height: 35px;
     border-radius: 8px;
     border: none;
+    cursor: pointer;
 }
 
 .button-email {
