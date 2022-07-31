@@ -1,8 +1,8 @@
 export default function Interests() {
     return(
-        <div>
+        <div className="interests-section">
             <h2>Interests</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis inventore facere quas recusandae iure, et doloribus quidem nobis nemo sed enim aut fugit. Accusantium rerum, ipsum ipsam quo unde quas similique dolore perferendis alias voluptas, voluptatum nam dolorum optio. Reiciendis!</p>
+            <p>Learning new things, Food, Music, Health and Fittness, Technology, Movies and Shows, Internet Enjoyer.</p>
         </div>
     )
 }

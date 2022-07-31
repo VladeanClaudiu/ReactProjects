@@ -48,7 +48,7 @@ body{
 .info-buttons > button {
     width: 120px;
     margin: 15px 8px 0px 8px;
-    height: 35px;
+    height: 34px;
     border-radius: 8px;
     border: none;
     cursor: pointer;
@@ -81,5 +81,43 @@ body{
     background-position: left;
     background-position-x: 20px;
     padding-left: 25px;
+}
+
+.about-section {
+    color: white;
+    margin: 30px 30px 0px 30px;
+}
+
+.about-section > h2 {
+    font-weight: 700;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 150%;
+}
+
+.about-section > p {
+    font-weight: 400;
+    font-size: 10.24px;
+    line-height: 150%;
+    color: #DCDCDC;
+}
+
+.interests-section {
+    color: white;
+    margin: 0px 30px 0px 30px;
+}
+
+.interests-section > h2 {
+    font-weight: 700;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 150%;
+}
+
+.interests-section > p {
+    font-weight: 400;
+    font-size: 10.24px;
+    line-height: 150%;
+    color: #DCDCDC;
 }
 
