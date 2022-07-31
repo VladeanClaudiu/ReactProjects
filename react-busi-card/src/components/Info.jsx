@@ -4,7 +4,7 @@ export default function Info(){
             <div className="info-photo"></div>
             <h1>Claudiu Vladean</h1>
             <h4>Frontend Developer</h4>
-            <a href="#">claudiuvladea.com</a>
+            <a href="#">claudiuvladean.com</a>
             <div className="info-buttons">
                 <button onClick={()=>{
                     window.open('mailto:claudiuver1.0@gmail.com');
