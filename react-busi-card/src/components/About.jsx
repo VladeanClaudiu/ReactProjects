@@ -1,8 +1,10 @@
 export default function About() {
     return(
-        <div>
+        <div className="about-section">
             <h2>About</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis inventore facere quas recusandae iure, et doloribus quidem nobis nemo sed enim aut fugit. Accusantium rerum, ipsum ipsam quo unde quas similique dolore perferendis alias voluptas, voluptatum nam dolorum optio. Reiciendis!</p>
+            <p>I am a frontend developer, I am currently learning React and I am very passionate about my work with Javascript and CSS, I 
+                love making things fit into place. I am a great problem solver, a team player, and I enjoy being challenged.
+            </p>
         </div>
     )
 }
