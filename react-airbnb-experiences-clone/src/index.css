@@ -6,12 +6,45 @@ body {
 
 .nav-section {
   height: 70px;
-  background-color: red;
+  background-color: #ffffff;
 }
 
 .nav-logo {
+  padding: 20px 0 0 36px;
   height: 25px;
 }
 
+section {
+  padding: 20px;
+}
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-image {
+  max-width: 400px;
+  align-self: center;
+}
+
+.hero-heading{
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 110%;
+  color: #000000;
+  margin-bottom: 0;
+}
+
+.hero-subheading{
+  height: 56px;
+  width: 320px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 110%;
+  color: #222222;
+  
+}
 
 
