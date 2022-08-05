@@ -47,4 +47,70 @@ section {
   
 }
 
+.card {
+  height: 300px;
+  width: 200px;
+  margin: 20px;
+}
 
+.card > p {
+  font-weight: 200;
+  font-size: 12px;
+  line-height: 110%;
+  color: #222222;
+}
+
+.card-price-bold{
+  font-weight: 700;
+}
+
+.card-image {
+  border-radius: 9px;
+  height: 240px;
+  width: 180;
+}
+
+.card-info {
+  margin-top: 5px;
+  font-style: normal;
+  color: #222222;
+}
+
+.card-info span {
+  font-weight: 300;
+  font-size: 13px;
+  margin-right: 3px;
+  vertical-align: auto;
+}
+
+.card-accent-gray {
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 110%;
+  color: #918E9B;
+}
+
+.card-star {
+  height: 12px;
+  margin-right: 3px;
+}
+
+.card-title {
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 110%;
+  color: #222222;
+}
+
+.card-available{
+  position: absolute;
+  margin: 5px;
+  background-color: white;
+  padding: 3px 15px 3px 15px;
+  border-radius: 5px;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 110%;
+  width: 61px;
+  height: 20px;
+}

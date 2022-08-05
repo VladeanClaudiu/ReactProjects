@@ -1,12 +1,13 @@
 export default function Card(props){
-    const {image, rating, stars, location, title, price} = props;
+    const {available, image, stars, rating, location, title, price} = props;
     return (
         <div className="card">
+            {props.hasOwnProperty('available') ? <div className="card-available">{available ? 'ONLINE' : 'SOLD OUT'}</div> : null}    
             <img src={image} alt="card image" className="card-image" />
             <div className="card-info">
-                <img src="" className="card-star" />
-                <span>{rating}</span>
-                <span className="card-accent-gray">({stars}) •</span>
+                <img src="../src/assets/images/star.png" className="card-star" />
+                <span>{stars}</span>
+                <span className="card-accent-gray">({rating}) •</span>
                 <span className="card-accent-gray">{location}</span>
             </div>
             <p className="card-title">{title}</p>
