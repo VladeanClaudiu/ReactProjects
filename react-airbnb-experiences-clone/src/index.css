@@ -106,11 +106,15 @@ section {
   position: absolute;
   margin: 5px;
   background-color: white;
-  padding: 3px 15px 3px 15px;
   border-radius: 5px;
   font-weight: 400;
   font-size: 10px;
-  line-height: 110%;
   width: 61px;
   height: 20px;
+  text-align: center;
+}
+
+.card-available > p {
+  margin: auto;
+  padding: 4px;
 }
