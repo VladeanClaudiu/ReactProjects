@@ -1,5 +1,5 @@
 export default function Card(props){
-    const {openSpots, coverImg, stats, reviewCount, location, title, price} = props.card;
+    const {openSpots, coverImg, stats, location, title, price} = props.card;
     return (
         <div className="card">
             {openSpots !== null ? <div className="card-available">{openSpots ? <p>AVAILABLE</p> : <p>SOLD OUT</p>}</div> : null}    
