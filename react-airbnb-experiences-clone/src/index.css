@@ -64,8 +64,10 @@ section {
 .card > p {
   font-weight: 200;
   font-size: 12px;
+  width: 150px;
   line-height: 110%;
   color: #222222;
+  margin-bottom: 0px;
 }
 
 .card-price-bold{
