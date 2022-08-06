@@ -8,6 +8,7 @@ import cardData from '../data/data'
 function App() {
   const card = cardData.map((card) => {
     return <Card 
+            key = {card.id}
             openSpots = {card.openSpots}
             title = {card.title}
             image = {card.coverImg}
