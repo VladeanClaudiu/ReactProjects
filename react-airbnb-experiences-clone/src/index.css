@@ -47,10 +47,18 @@ section {
   
 }
 
+.cards-section {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  overflow-x: auto;
+}
+
 .card {
   height: 300px;
   width: 200px;
-  margin: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .card > p {
@@ -68,6 +76,7 @@ section {
   border-radius: 9px;
   height: 240px;
   width: 180;
+  z-index: -20;
 }
 
 .card-info {
@@ -103,15 +112,16 @@ section {
 }
 
 .card-available{
-  position: absolute;
   margin: 5px;
+  margin-bottom: -25px;
   background-color: white;
-  border-radius: 5px;
+  border-radius: 4px;
   font-weight: 400;
   font-size: 10px;
   width: 61px;
   height: 20px;
   text-align: center;
+  z-index: 999;
 }
 
 .card-available > p {
