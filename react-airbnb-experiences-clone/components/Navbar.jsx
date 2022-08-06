@@ -1,4 +1,4 @@
-import Logo from "../src/assets/images/airbnb-logo.png"
+import Logo from "../src/assets/airbnb-logo.png"
 export default function Navbar(){
     return ( 
         <nav className="nav-section">
