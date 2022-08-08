@@ -35,12 +35,13 @@ body {
 .location-card {
   display: grid;
   grid-template-columns: .8fr 4fr;
-  margin: 40px;
+  margin: 8px 40px 0px 40px;
+  border-bottom: 1px solid #F5F5F5;
 }
 
 .location-image > img {
   object-fit: cover;
-  margin: 10px;
+  margin: 10px 10px 10px 0px;
   grid-column: 1/2;
   width: 125px;
   height: 168px;
