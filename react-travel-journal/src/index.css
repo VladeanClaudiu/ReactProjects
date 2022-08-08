@@ -31,3 +31,17 @@ body {
   color: #FFFFFF;
 }
 
+.location-card {
+  display: grid;
+  grid-template-columns: .8fr 4fr;
+  margin: 40px;
+}
+
+.location-image > img{
+  margin: 20px;
+  grid-column: 1/2;
+  width: 125px;
+  height: 168px;
+  border-radius: 5px;
+}
+
