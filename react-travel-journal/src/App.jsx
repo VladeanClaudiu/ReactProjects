@@ -7,6 +7,7 @@ import data from '../data/data'
 function App() {
   const mappedData = data.map((location) => {
     return <Location
+      key = {location.key}
       location = {location}
     />
 

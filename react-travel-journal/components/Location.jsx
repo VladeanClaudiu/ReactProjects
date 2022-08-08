@@ -1,7 +1,7 @@
 import pin from '../src/assets/pin.svg'
 
 export default function Location(props) {
-    const {title, location, googleMapsUrl, startDate, endDate, description, imageUrl} = props.location;
+    const {key, title, location, googleMapsUrl, startDate, endDate, description, imageUrl} = props.location;
     return (
         <section className="location-card">
             <div className="location-image">
@@ -12,9 +12,8 @@ export default function Location(props) {
                     <div className='location-title'>
                         <img src={pin} alt="location logo" />
                         <p>{location}</p>
-                        <a href="">View on Google Maps</a>
+                        <a href={googleMapsUrl}>View on Google Maps</a>
                     </div>
-                    
                     <h1>{title}</h1>
                 </div>
                 <div className="location-visit-date-info">
