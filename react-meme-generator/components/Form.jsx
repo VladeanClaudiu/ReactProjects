@@ -1,11 +1,11 @@
 export default function Form() {
     return (
         <section className="form-section">
-            <div>
-                <input type="text" />
-                <input type="text" />
+            <div className="form-section-inputs">
+                <input type="text" placeholder="top of image"/>
+                <input type="text" placeholder="bottom of image"/>
             </div>
-            <button>Generate New Meme</button>
+            <button className="form-section-button">Generate new meme image</button>
         </section>
     )
 }
