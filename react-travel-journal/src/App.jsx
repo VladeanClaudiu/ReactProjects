@@ -15,7 +15,7 @@ function App() {
   return (
     <div>
       <Navbar />
-      <section>
+      <section className='journal-section'>
         {mappedData}
       </section>
     </div>
