@@ -35,7 +35,7 @@ body {
   margin: 0 auto;
 }
 
-.form-section-inputs {
+.form-section-inputs > form{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -43,7 +43,7 @@ body {
   margin-bottom: 10px;
 }
 
-.form-section-inputs > input {
+.form-section-inputs > form > input {
   width: 247px;
   height: 35px;
   left: 283px;
