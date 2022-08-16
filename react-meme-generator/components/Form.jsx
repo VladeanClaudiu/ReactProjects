@@ -4,8 +4,6 @@ import Image from "./Image";
 
 export default function Form() {
     
-    // const [memeImage, setMemeImage] = React.useState("");
-
     const [meme, setMeme] = React.useState({
         topText: '',
         bottomText: '',
@@ -14,7 +12,6 @@ export default function Form() {
 
     const [allMemeImages, setAllMemeImages] = React.useState(memeData)
     
-
     function getMeme() {
         const memeArray = allMemeImages.data.memes
         const randomNumber = Math.floor(Math.random()*(memeArray.length));
