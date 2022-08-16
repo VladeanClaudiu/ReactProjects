@@ -20,10 +20,9 @@ export default function Form() {
         const randomNumber = Math.floor(Math.random()*(memeArray.length));
         const memeUrl = memeArray[randomNumber].url;
         setMeme(prevMeme=> {
-            let test = memeUrl
             return {
                 ...prevMeme,
-                randomImage: {test}
+                randomImage: memeUrl
             }
         });
     }
@@ -37,10 +36,10 @@ export default function Form() {
                 </form>
                 
             </div>
-            <button onClick={getMeme.randomImage} className="form-section-button">Generate new meme image</button>
+            <button onClick={getMeme} className="form-section-button">Generate new meme image</button>
         </section>
         <Image 
-            img = {meme}
+            img = {meme.randomImage}
             />
         </main>
         
