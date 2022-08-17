@@ -23,6 +23,7 @@ export default function Form() {
             }
         });
     }
+    
     return (
         <main>
             <section className="form-section">
