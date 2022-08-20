@@ -1,4 +1,5 @@
 export default function Nav() {
+
     return (
         <nav className="nav-section">
             <h4>Meme Generator</h4>
