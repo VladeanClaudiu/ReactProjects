@@ -16,24 +16,22 @@ export default function Form() {
         const memeArray = allMemeImages.data.memes
         const randomNumber = Math.floor(Math.random()*(memeArray.length));
         const memeUrl = memeArray[randomNumber].url;
-        setMeme(prevMeme=> {
-            return {
+        setMeme(prevMeme=> ({
                 ...prevMeme,
                 randomImage: memeUrl
-            }
-        });
+            }));
     }
     console.log(meme)
 
     function handleInput(event){
         //console.log(event)
-        const {name, value } = event.target;
-        setMeme(prevMeme => {
-            return{
+        const {name, value} = event.target;
+        setMeme(prevMeme => 
+            ({
                ...prevMeme,
                [name]:value
-            }
-        })
+            })
+        )
     }
     
     return (
