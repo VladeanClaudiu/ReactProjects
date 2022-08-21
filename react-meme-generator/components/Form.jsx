@@ -23,14 +23,37 @@ export default function Form() {
             }
         });
     }
+    console.log(meme)
+
+    function handleInput(event){
+        //console.log(event)
+        const {name, value } = event.target;
+        setMeme(prevMeme => {
+            return{
+               ...prevMeme,
+               [name]:value
+            }
+        })
+    }
     
     return (
         <main>
             <section className="form-section">
             <div className="form-section-inputs">
                 <form>
-                    <input type="text" placeholder="Text 1"/>
-                    <input type="text" placeholder="Text 2"/>
+                    <input 
+                    type="text" 
+                    placeholder="Text 1"
+                    name="topText"
+                    onChange={handleInput}
+                    value={meme.topText}/>
+                    
+                    <input 
+                    type="text" 
+                    placeholder="Text 2"
+                    name="bottomText"
+                    onChange={handleInput}
+                    value={meme.bottomText}/>
                 </form>
                 
             </div>
@@ -38,6 +61,8 @@ export default function Form() {
         </section>
         <Image 
             img = {meme.randomImage}
+            top = {meme.topText}
+            bottom = {meme.bottomText}
             />
         </main>
         
