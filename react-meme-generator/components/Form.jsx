@@ -61,7 +61,6 @@ export default function Form() {
                     onChange={handleInput}
                     value={meme.bottomText}/>
                 </form>
-                
             </div>
             <button onClick={getMeme} className="form-section-button">Generate new meme image</button>
         </section>
