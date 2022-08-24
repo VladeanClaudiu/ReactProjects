@@ -16,7 +16,6 @@ nav {
   align-items: center;
   background-color: #ffffff;
   padding: 30px 25px;
-  height: 60px;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
   z-index: 1;
 }
@@ -25,12 +24,12 @@ nav.dark {
   background-color: #21222A;
 }
 
-.nav--logo_icon {
+.react-logo {
   width: 30px;
   margin-right: 10px;
 }
 
-.nav--logo_text {
+.nav-logo-text{
   color: #61DAFB;
   margin-right: auto;
 }
@@ -49,7 +48,7 @@ nav.dark {
   font-weight: 600;
 }
 
-.toggler--slider {
+.toggler-slider {
   width: 25px;
   height: 13px;
   background-color: #2B283A;
@@ -63,31 +62,31 @@ nav.dark {
   box-sizing: content-box;
 }
 
-nav.dark .toggler--slider {
+nav.dark .toggler-slider {
   border-color: white;
   background-color: #F5F5F5;
 }
 
-.toggler--slider--circle {
+.toggler-slider-circle {
   height: 13px;
   width: 13px;
   background-color: white;
   border-radius: 50%;
 }
 
-nav.dark .toggler--slider--circle {
+nav.dark .toggler-slider-circle {
   background-color: black;
 }
 
-.toggler--light {
+.toggler-light {
   color: #2B283A;
 }
 
-nav.dark .toggler--light {
+nav.dark .toggler-light {
   color: #918E9B;
 }
 
-.toggler--dark {
+.toggler-dark {
   color: #D5D4D8;
 }
 
@@ -95,7 +94,7 @@ nav.dark .toggler-dark {
   color: #FFFFFF;
 }
 
-nav.dark .toggler--slider {
+nav.dark .toggler-slider {
   justify-content: flex-end;
 }
 
