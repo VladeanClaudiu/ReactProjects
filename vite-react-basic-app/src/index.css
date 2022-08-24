@@ -108,6 +108,7 @@ main {
   color: #2B283A;
   height: 100vh;
   max-width: 620px;
+  margin: 0 auto;
 }
 
 main.dark {
