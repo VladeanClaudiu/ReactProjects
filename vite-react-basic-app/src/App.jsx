@@ -15,9 +15,6 @@ function App() {
   }else{
     document.body.style = 'background-color: white'
   }
-    
-    
- 
 
   return (
     <div className="App">
