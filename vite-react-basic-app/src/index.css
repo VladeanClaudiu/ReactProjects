@@ -1,7 +1,5 @@
-/* DarkMode */
 body{
   margin: 0;
-  background-color: #282D35;
 }
 
 #root {
@@ -22,6 +20,7 @@ nav {
 
 nav.dark {
   background-color: #21222A;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0);
 }
 
 .react-logo {
@@ -100,70 +99,41 @@ nav.dark .toggler-slider {
 
 
 /* ----------------------Main style-------------------------- */
-
-.dark {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #21222A;
-  padding: 1.5em;
-}
-
-.dark > h3 {
-  margin-right: auto;
-  margin-left: .2em;
-  color: #61DAFB;
-  font-weight: 700;
-  font-size: 22.2535px;
-  line-height: 27px;
-  letter-spacing: -0.05em;
-}
-
-.dark > h4 {
-  width: 259px;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 19px;
-  text-align: right;
-  color: #DEEBF8;
-}
-
-.react-logo {
-  width: 40px; 
-}
-
-.main-content {
-  padding: 50px;
-  background-image: url(./assets/react-icon-dark.png);
+main {
+  padding: 57px 27px;
+  background-image: url("./assets/react-icon-light.png"); 
   background-repeat: no-repeat;
-  background-position: right bottom;
-  
+  background-position: 100% 20%;
+  flex: 1 1 auto;
+  color: #2B283A;
+  height: 100vh;
+  max-width: 620px;
 }
 
+main.dark {
+  background-image: url("./assets/react-icon-dark.png"); 
+  background-color: #282D35;
+  color: white;    
+}
 
-.main-content > h1 {
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 39.06px;
-  line-height: 47px;
+.main-title {
+  margin: 0;
+  font-size: 39px;
   letter-spacing: -0.05em;
-  font-style: normal;
 }
 
-
-.main-content > ul > li::marker {
-  color: #61DAFB; /* Change the color */
-  font-size: 1.4rem;
-  
-}
-
-.main-content > ul > li {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  color: #FFFFFF;
+.main-facts {
+  margin-top: 46px;
   max-width: 400px;
-  margin-top: 1em;
+}
+
+.main-facts > li {
+  line-height: 19px;
+  padding-block: 10px;
+}
+
+.main-facts > li::marker {
+  font-size: 1.4rem;
+  color: #61DAFB;
 }
 

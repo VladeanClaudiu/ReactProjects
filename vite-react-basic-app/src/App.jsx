@@ -10,6 +10,14 @@ function App() {
   function toggleDarkMode() {
     setDarkMode(prevMode=> !prevMode)
   }
+  if(darkMode){
+    document.body.style = 'background-color: #282D35'
+  }else{
+    document.body.style = 'background-color: white'
+  }
+    
+    
+ 
 
   return (
     <div className="App">
