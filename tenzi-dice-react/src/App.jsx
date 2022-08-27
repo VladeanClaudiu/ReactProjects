@@ -42,6 +42,7 @@ function App() {
     held={die.isHeld}
     onHandle={()=>holdDice(die.id)}/>
   })
+  
   return (
     <main className='tenzi-main'>
       <section className='die-section'>
