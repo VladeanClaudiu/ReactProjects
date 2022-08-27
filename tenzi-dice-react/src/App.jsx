@@ -19,7 +19,8 @@ function App() {
 
   const Dies = die.map(die => {
     return <Die 
-    value={die.value} />
+    value={die.value} 
+    held={die.isHeld}/>
   })
   return (
     <main className='tenzi-main'>
