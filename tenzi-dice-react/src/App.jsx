@@ -14,9 +14,7 @@ function App() {
   }
 
   function rollDice(){
-    setDie(newDie=> {
-      return allNewDice()
-    })
+    setDie(allNewDice())
   }
 
   const Dies = die.map(die => {
