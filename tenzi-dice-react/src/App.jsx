@@ -13,15 +13,22 @@ function App() {
     return dieArray
   }
 
-  const Dies = die.map(item => {
-    return <Die value={item} />
+  function rollDice(){
+    setDie(newDie=> {
+      return allNewDice()
+    })
+  }
+
+  const Dies = die.map(die => {
+    return <Die 
+    value={die} />
   })
   return (
     <main className='tenzi-main'>
       <section className='die-section'>
         {Dies}
       </section>
-      
+      {<button onClick={rollDice} className='roll-diceButton'>Roll</button>}
     </main>
   )
 }
