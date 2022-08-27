@@ -51,5 +51,5 @@ function App() {
     </main>
   )
 }
-//test committt
+//test commit
 export default App
