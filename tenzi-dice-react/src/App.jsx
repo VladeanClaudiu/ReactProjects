@@ -1,21 +1,19 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
 import Die from './components/Die'
 
 function App() {
+  const [die, setDie] = useState(allNewDice)
+
   function allNewDice() {
     const dieArray = [];
     for(let i = 0; i < 10; i++){
-      dieArray.push(Math.floor(Math.random()*6)+1)
+      dieArray.push(Math.ceil(Math.random()*6))
     }
     return dieArray
   }
 
-  
-  const generatedDieArray = allNewDice()
-  console.log(generatedDieArray)
-  const Dies = generatedDieArray.map(item => {
+  const Dies = die.map(item => {
     return <Die value={item} />
   })
   return (
