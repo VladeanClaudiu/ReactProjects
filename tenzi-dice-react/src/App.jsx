@@ -19,11 +19,19 @@ function App() {
   }
 
   function rollDice(){
-    setDie(allNewDice())
+    setDie(oldDie => oldDie.map(die => {
+      return die.isHeld ?
+       die : 
+       {...die, 
+        id: nanoid(),
+        value: Math.ceil(Math.random()*6)}
+    }))
   }
 
   function holdDice(id) {
-    console.log(id)
+    setDie(oldDie=> oldDie.map(die => {
+      return die.id ===id ? {...die, isHeld: !die.isHeld} : die
+    }) )
   }
 
   const Dies = die.map(die => {
