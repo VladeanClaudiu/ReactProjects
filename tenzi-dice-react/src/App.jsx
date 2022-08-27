@@ -8,7 +8,7 @@ function App() {
   function allNewDice() {
     const dieArray = [];
     for(let i = 0; i < 10; i++){
-      dieArray.push(Math.ceil(Math.random()*6))
+      dieArray.push({ value: Math.ceil(Math.random()*6), isHeld: false })
     }
     return dieArray
   }
@@ -19,7 +19,7 @@ function App() {
 
   const Dies = die.map(die => {
     return <Die 
-    value={die} />
+    value={die.value} />
   })
   return (
     <main className='tenzi-main'>
