@@ -22,11 +22,17 @@ function App() {
     setDie(allNewDice())
   }
 
+  function holdDice(id) {
+    console.log(id)
+  }
+
   const Dies = die.map(die => {
     return <Die 
     key={die.id}
+    id={die.id}
     value={die.value} 
-    held={die.isHeld}/>
+    held={die.isHeld}
+    onHandle={()=>holdDice(die.id)}/>
   })
   return (
     <main className='tenzi-main'>
