@@ -39,13 +39,20 @@ function App() {
   }
 
   function rollDice(){
-    setDie(oldDie => oldDie.map(die => {
+    if(!tenzi){
+      setDie(oldDie => oldDie.map(die => {
       return die.isHeld ?
        die : 
        {...die, 
         id: nanoid(),
         value: Math.ceil(Math.random()*6)}
-    }))
+      }))
+    }
+    if(tenzi){
+      setDie(allNewDice())
+      setTenzi(oldTenz=> !oldTenz)
+    }
+    
   }
 
   function holdDice(id) {
