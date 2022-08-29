@@ -2,10 +2,29 @@ import { useState } from 'react'
 import './App.css'
 import Die from './components/Die'
 import {nanoid} from 'nanoid'
+import { useEffect } from 'react'
 
 function App() {
   const [die, setDie] = useState(allNewDice)
 
+  const [tenzi, setTenzi] = useState(false);
+  
+  useEffect(()=> {
+    console.log("Dice state changed")
+    const isHeldCheck = die.every(die => die.isHeld)
+    const valueAimed = die[0].value;
+
+    const isValueEqual = die.every(die => die.value === valueAimed);
+
+    if(isHeldCheck && isValueEqual){
+      console.log("you won")
+      setTenzi(oldTenz => !oldTenz)
+    }else{
+      console.log("not yet buddy")
+    }
+
+  },[die])
+  
   function allNewDice() {
     const dieArray = [];
     for(let i = 0; i < 10; i++){
@@ -45,6 +64,8 @@ function App() {
   
   return (
     <main className='tenzi-main'>
+      <h1 className='tenzi-title'>Tenzies</h1>
+      <p className="tenzi-instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
       <section className='die-section'>
         {Dies}
       </section>
