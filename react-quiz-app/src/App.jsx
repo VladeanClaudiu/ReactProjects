@@ -15,6 +15,7 @@ function App() {
       handleClick={changeGameState}
       />}
       {gameStart && <This />}
+      {/* ^^^ main quiz component to be added here :) */}
     </main>
   )
 }
