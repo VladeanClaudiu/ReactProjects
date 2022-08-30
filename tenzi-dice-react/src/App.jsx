@@ -7,9 +7,10 @@ import Confetti from 'react-confetti'
 
 function App() {
   const [die, setDie] = useState(allNewDice)
-
   const [tenzi, setTenzi] = useState(false);
-  
+  const [rolls, setRolls] = useState(0);
+  // const [timer, setTimer] = useState(0);
+ 
   useEffect(()=> {
     console.log("Dice state changed")
     const isHeldCheck = die.every(die => die.isHeld)
@@ -25,7 +26,23 @@ function App() {
     }
 
   },[die])
-  
+
+  useEffect(() => {
+    console.log(rolls)
+  }, [rolls])
+
+  // useEffect(() =>{
+  //     if(!tenzi){
+  //       setInterval(() => {
+  //         setTimer(oldTime => oldTime+1)
+  //       }, 1000)   
+  //     }else{
+  //       setTimer(oldTime =>oldTime(0))
+  //     }   
+  // },[])
+
+  // console.log(timer)
+
   function allNewDice() {
     const dieArray = [];
     for(let i = 0; i < 10; i++){
@@ -43,6 +60,7 @@ function App() {
       setDie(allNewDice())
       setTenzi(oldTenz=> !oldTenz)
     }else{
+      setRolls(oldRolls=> oldRolls+=1)  
       setDie(oldDie => oldDie.map(die => {
         return die.isHeld ?
          die : 
@@ -51,6 +69,7 @@ function App() {
           value: Math.ceil(Math.random()*6)}
         }))
     }
+    
   }
 
   function holdDice(id) {
