@@ -14,6 +14,7 @@ function App() {
 
   useEffect(() => {
     async function getQuiz(){
+      
       const res = await fetch('https://opentdb.com/api.php?amount=6')
       const data = await res.json();
       console.log(data.results)
@@ -25,7 +26,7 @@ function App() {
   const quizQuestion = quizState.map(question=>{
     return(
       <Question 
-        questionAsked = {question.question}
+        questionAsked = {question.question.toString()}
       />
     )
   })
