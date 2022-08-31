@@ -12,25 +12,30 @@ function App() {
     setGameStart(oldGame => !oldGame)
   }
 
-  useEffect(()  => {
-    const fetchData = async() => {
-    const data = await fetch('https://opentdb.com/api.php?amount=10&difficulty=medium')
-    const jsonData =  data.json();
-     return await jsonData;
-    } 
-
-    const result = fetchData()
-    .catch(console.error);
-     console.log(result)
-  },[gameStart])
-
+  useEffect(() => {
+    async function getQuiz(){
+      const res = await fetch('https://opentdb.com/api.php?amount=6')
+      const data = await res.json();
+      console.log(data.results)
+      setQuizState(oldQuiz => data.results)
+    }
+    getQuiz();
+  },[])
+  console.log(quizState)
+  const quizQuestion = quizState.map(question=>{
+    return(
+      <Question 
+        questionAsked = {question.question}
+      />
+    )
+  })
   return (
     <main>
       {!gameStart && <StartPage 
       handleClick={changeGameState}
       />}
       {gameStart && 
-      <section className='question-section'><Question />
+      <section className='question-section'>{quizQuestion}
       </section>}
       {/* ^^^ main quiz component to be added here :) */}
     </main>
