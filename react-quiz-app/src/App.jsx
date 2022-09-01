@@ -63,7 +63,7 @@ function App() {
     for(let inc in arrayPath){
       let answer = arrayPath[inc].answer
       answerArray.push({
-                        answer :decodeURIComponent(answer),
+                        answer : decodeURIComponent(answer),
                         correct : false,
                         selected : false
                       })
