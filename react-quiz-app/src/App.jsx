@@ -15,7 +15,7 @@ function App() {
   useEffect(() => {
     async function getQuiz(){
       
-      const res = await fetch('https://opentdb.com/api.php?amount=6')
+      const res = await fetch('https://opentdb.com/api.php?amount=6&encode=url3986')
       const data = await res.json();
       console.log(data.results)
       setQuizState(oldQuiz => data.results)
@@ -26,7 +26,8 @@ function App() {
   const quizQuestion = quizState.map(question=>{
     return(
       <Question 
-        questionAsked = {question.question.toString()}
+      //decodeUriComponent fixes url enchoding response
+        questionAsked = {decodeURIComponent(question.question.toString())}
       />
     )
   })
@@ -38,7 +39,7 @@ function App() {
       {gameStart && 
       <section className='question-section'>{quizQuestion}
       </section>}
-      {/* ^^^ main quiz component to be added here :) */}
+     
     </main>
   )
 }
