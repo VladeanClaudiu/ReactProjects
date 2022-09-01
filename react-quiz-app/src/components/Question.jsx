@@ -3,26 +3,22 @@ import React from "react";
 export default function Question(props) {
     console.log(props.answers)
 
-    const newArray = (props.answers).sort((a,b) => 0.5 - Math.random());
-    console.log(newArray)
+    const array = (props.answers).sort((a,b) => 0.5 - Math.random());
+    console.log(array)
     
+    const Options = array.map(item => {
+        return(
+            <div className="option">
+                    <p>{item.answer}</p>
+                </div>
+        )
+    })
     
     return(
         <section className="question">
              <h3 className="question-head">{props.questionAsked}</h3>
             <div className="question-options">
-                <div className="option">
-                    <p>Option 1</p>
-                </div>
-                <div className="option">
-                    <p>Option 2</p>
-                </div>
-                <div className="option">
-                    <p>Option 3</p>
-                </div>
-                <div className="option">
-                    <p>Option 4</p>
-                </div>
+                {Options}
             </div>
         </section>
     )
