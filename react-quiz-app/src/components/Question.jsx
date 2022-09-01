@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function Question(props) {
-    console.log(props.answers)
 
     const array = (props.answers).sort((a,b) => 0.5 - Math.random());
     console.log(array)
