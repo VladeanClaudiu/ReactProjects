@@ -15,21 +15,28 @@ function App() {
   useEffect(() => {
     async function getQuiz(){
       
-      const res = await fetch('https://opentdb.com/api.php?amount=6&encode=url3986')
+      const res = await fetch('https://opentdb.com/api.php?amount=6&type=multiple&encode=url3986')
       const data = await res.json();
       console.log(data.results)
-      setQuizState(oldQuiz => data.results)
+      setQuizState(data.results)
     }
     getQuiz();
   },[])
-  console.log(quizState)
+
   const quizQuestion = quizState.map(question=>{
+    const answerArray = [];
+    answerArray.push({correct :decodeURIComponent(question.correct_answer)})
+    for(let inc in question.incorrect_answers){
+      answerArray.push({incorrect :decodeURIComponent(question.incorrect_answers[inc])})
+    }
     return(
       <Question 
       //decodeUriComponent fixes url enchoding response
         questionAsked = {decodeURIComponent(question.question.toString())}
+        answers = {answerArray}
       />
     )
+    
   })
   return (
     <main>

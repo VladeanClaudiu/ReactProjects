@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Question(props) {
-    console.log(decodeURI(props.questionAsked))
+    console.log(props.answers)
     return(
         <section className="question">
              <h3 className="question-head">{props.questionAsked}</h3>
