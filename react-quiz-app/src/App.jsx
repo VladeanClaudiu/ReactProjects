@@ -3,6 +3,7 @@ import './App.css'
 import StartPage from './components/StartPage'
 import Question from './components/Question'
 import { useEffect } from 'react'
+import { nanoid } from 'nanoid'
 
 function App() {
   const [gameStart, setGameStart] = useState(false)
@@ -18,7 +19,6 @@ function App() {
     async function getQuiz(){
       const res = await fetch('https://opentdb.com/api.php?amount=6&type=multiple&encode=url3986')
       const data = await res.json();
-      console.log(data.results)
       setQuizState(data.results)
     }
     getQuiz();
@@ -37,7 +37,9 @@ function App() {
     })
 
     //array correct answer push
-    answerArray.push({question: decodeURIComponent(question.question),
+    answerArray.push({
+                      id : nanoid(),
+                      question: decodeURIComponent(question.question),
                       corAnswers : 
                       {answer : decodeURIComponent(question.correct_answer),
                       correct : true,
@@ -52,9 +54,9 @@ function App() {
     setQuizUsed(quizUse)
   },[quizState])
 
-  console.log(quizUsed)
 
   const quizQuestion = quizUse.map(question=>{
+    const key = question[0]
     const answerArray = [];
     //array correct answer push
     answerArray.push(question[0].corAnswers)
@@ -68,10 +70,10 @@ function App() {
                         selected : false
                       })
     }
-
+  
     return(
-      <Question 
-      //decodeUriComponent fixes url enchoding response
+      <Question  
+        key = {key.id}
         questionAsked = {decodeURIComponent(question[0].question)}
         answers = {answerArray}
       />
