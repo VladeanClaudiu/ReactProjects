@@ -1,10 +1,8 @@
 import React from "react";
 
 export default function Question(props) {
-
     const array = (props.answers).sort((a,b) => 0.5 - Math.random());
-    console.log(array)
-    
+   
     const Options = array.map(item => {
         return(
             <div className="option">

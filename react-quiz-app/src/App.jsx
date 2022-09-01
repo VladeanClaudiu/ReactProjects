@@ -24,8 +24,10 @@ function App() {
     getQuiz();
   },[])
 
+  //object formatting 
   const quizUse = quizState.map(question => {
     const answerArray = [];
+
     const incorrectArray = [];
     question.incorrect_answers.map(answer => {
       incorrectArray.push({
@@ -34,7 +36,6 @@ function App() {
         selected : false})
     })
 
-    console.log(incorrectArray)
     //array correct answer push
     answerArray.push({question: decodeURIComponent(question.question),
                       corAnswers : 
@@ -42,25 +43,27 @@ function App() {
                       correct : true,
                       selected : false
                       },
-                      incorrect : {incorrectArray}  
+                      incorrect : ({incorrectArray} ) 
                     })
-    
     return answerArray
   })
 
-  console.log(quizUse)
-  const quizQuestion = quizState.map(question=>{
+  useEffect(() => {
+    setQuizUsed(quizUse)
+  },[quizState])
+
+  console.log(quizUsed)
+
+  const quizQuestion = quizUse.map(question=>{
     const answerArray = [];
     //array correct answer push
-    answerArray.push({
-                      answer :decodeURIComponent(question.correct_answer),
-                      correct : true,
-                      selected : false
-                    })
+    answerArray.push(question[0].corAnswers)
     //array incorrect answer push
-    for(let inc in question.incorrect_answers){
+    let arrayPath = question[0].incorrect.incorrectArray;
+    for(let inc in arrayPath){
+      let answer = arrayPath[inc].answer
       answerArray.push({
-                        answer :decodeURIComponent(question.incorrect_answers[inc]),
+                        answer :decodeURIComponent(answer),
                         correct : false,
                         selected : false
                       })
@@ -69,7 +72,7 @@ function App() {
     return(
       <Question 
       //decodeUriComponent fixes url enchoding response
-        questionAsked = {decodeURIComponent(question.question.toString())}
+        questionAsked = {decodeURIComponent(question[0].question)}
         answers = {answerArray}
       />
     )
