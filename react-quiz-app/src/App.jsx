@@ -25,9 +25,13 @@ function App() {
 
   const quizQuestion = quizState.map(question=>{
     const answerArray = [];
-    answerArray.push({correct :decodeURIComponent(question.correct_answer)})
+    //array correct answer push
+    answerArray.push({answer :decodeURIComponent(question.correct_answer),
+                      correct : true})
+    //array incorrect answer push
     for(let inc in question.incorrect_answers){
-      answerArray.push({incorrect :decodeURIComponent(question.incorrect_answers[inc])})
+      answerArray.push({answer :decodeURIComponent(question.incorrect_answers[inc]),
+                       correct: false})
     }
     return(
       <Question 

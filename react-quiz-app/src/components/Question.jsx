@@ -2,6 +2,11 @@ import React from "react";
 
 export default function Question(props) {
     console.log(props.answers)
+
+    const newArray = (props.answers).sort((a,b) => 0.5 - Math.random());
+    console.log(newArray)
+    
+    
     return(
         <section className="question">
              <h3 className="question-head">{props.questionAsked}</h3>
