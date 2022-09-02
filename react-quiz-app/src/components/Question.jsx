@@ -6,9 +6,8 @@ export default function Question(props) {
         return  item[1] 
     })
 
-    const array = (arrayTest).sort((a,b) => 0.5 - Math.random());
    
-    const Options = array.map(item => {
+    const Options = arrayTest.map(item => {
         return(
             <div className="option">
                     <p>{item.answer}</p>

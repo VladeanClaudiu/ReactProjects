@@ -59,6 +59,7 @@ function App() {
   //setlect answer function
   const selectAnswer = (id)=> {
     console.log('button Pressed')
+    console.log(id)
     // setQuizUsed(oldQuiz => oldQuiz.map(quiz => {
     //   const quizObj = quiz[0].answers;
     //   let newObj;
