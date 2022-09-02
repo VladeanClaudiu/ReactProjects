@@ -9,6 +9,7 @@ function App() {
   const [gameStart, setGameStart] = useState(false)
   //holds all the data fetched from api
   const [quizState, setQuizState] = useState([])
+  //holds formated data for the componets use
   const [quizUsed, setQuizUsed] = useState([])
 
   //changes game state 
@@ -29,8 +30,9 @@ function App() {
   //object formatting 
   const quizUse = quizState.map(question => {
     const answerArray = [];
-
-    const incorrectArray = [];
+    const incorrectArray = [{answer : decodeURIComponent(question.correct_answer),
+                             correct : true,
+                             selected : false}];
     question.incorrect_answers.map(answer => {
       incorrectArray.push({
         answer :decodeURIComponent(answer),
@@ -42,44 +44,38 @@ function App() {
     answerArray.push({
                       id : nanoid(),
                       question: decodeURIComponent(question.question),
-                      corAnswers : 
-                      {answer : decodeURIComponent(question.correct_answer),
-                      correct : true,
-                      selected : false
-                      },
-                      incorrect : ({incorrectArray} ) 
+                      answers : {...incorrectArray},
                     })
     return answerArray
   })
+
   
   //set quiz state
   useEffect(() => {
     setQuizUsed(quizUse)
   },[quizState])
 
+  //setlect answer function
+  const selectAnswer = ()=> {
+    console.log('button Pressed')
+    console.log(quizUsed)
+    // setQuizUsed(oldQuiz => {
+      
+    // })
+  }
 
-  const quizQuestion = quizUse.map(question=>{
-    const key = question[0]
-    const answerArray = [];
-    //array correct answer push
-    answerArray.push(question[0].corAnswers)
-    //array incorrect answer push
-    let arrayPath = question[0].incorrect.incorrectArray;
-    for(let inc in arrayPath){
-      let answer = arrayPath[inc].answer
-      answerArray.push({
-                        answer : decodeURIComponent(answer),
-                        correct : false,
-                        selected : false
-                      })
-    }
-  
+  //map data and pass it to Question component as props
+  const quizQuestion = quizUsed.map(question=>{
+    const key = question[0];
+    const answerArray = [question[0].answers];
+ 
+    console.log(answerArray)
     return(
       <Question  
         key = {key.id}
         questionAsked = {decodeURIComponent(question[0].question)}
         answers = {answerArray}
-        handleClick = {""}
+        handleClick = {selectAnswer}
       />
     )
     
