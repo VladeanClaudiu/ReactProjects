@@ -11,10 +11,12 @@ function App() {
   const [quizState, setQuizState] = useState([])
   const [quizUsed, setQuizUsed] = useState([])
 
+  //changes game state 
   function changeGameState() {
     setGameStart(oldGame => !oldGame)
   }
 
+  //fetch api data
   useEffect(() => {
     async function getQuiz(){
       const res = await fetch('https://opentdb.com/api.php?amount=6&type=multiple&encode=url3986')
@@ -49,7 +51,8 @@ function App() {
                     })
     return answerArray
   })
-
+  
+  //set quiz state
   useEffect(() => {
     setQuizUsed(quizUse)
   },[quizState])
@@ -76,6 +79,7 @@ function App() {
         key = {key.id}
         questionAsked = {decodeURIComponent(question[0].question)}
         answers = {answerArray}
+        handleClick = {""}
       />
     )
     
