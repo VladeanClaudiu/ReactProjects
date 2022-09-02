@@ -44,7 +44,7 @@ function App() {
     answerArray.push({
                       id : nanoid(),
                       question: decodeURIComponent(question.question),
-                      answers : {...incorrectArray},
+                      answers : [...incorrectArray],
                     })
     return answerArray
   })
@@ -55,27 +55,50 @@ function App() {
     setQuizUsed(quizUse)
   },[quizState])
 
-  //setlect answer function
-  const selectAnswer = ()=> {
-    console.log('button Pressed')
-    console.log(quizUsed)
-    // setQuizUsed(oldQuiz => {
-      
-    // })
-  }
 
+  //setlect answer function
+  const selectAnswer = (id)=> {
+    console.log('button Pressed')
+    // setQuizUsed(oldQuiz => oldQuiz.map(quiz => {
+    //   const quizObj = quiz[0].answers;
+    //   let newObj;
+    //   quiz[0].id === id ? 
+    //                       newObj = quizObj.map(item => {
+    //                         return quiz[0].id === id ? {
+    //                           ...item, selected: !item.selected
+    //                         }: "nope"
+    //                       })
+    //                      : console.log("nope")
+    //   return quiz[0].id === id ?
+    //                         [{...quiz[0],
+    //                           answers: newObj
+    // }] : 
+    //                       [quiz[0]]
+    // }))
+
+    // quizUsed.map(quiz=> {
+    //   const quizObj = quiz[0].answers;
+    //   console.log(quizObj)
+    //   quizObj.map(item => {
+    //     quiz[0].id === id? console.log(item.answer) : console.log("nope")
+        
+    //   })
+    // })
+
+  }
+console.log(quizUsed)
   //map data and pass it to Question component as props
   const quizQuestion = quizUsed.map(question=>{
     const key = question[0];
     const answerArray = [question[0].answers];
- 
-    console.log(answerArray)
+
     return(
       <Question  
+        id = {key.id}
         key = {key.id}
         questionAsked = {decodeURIComponent(question[0].question)}
         answers = {answerArray}
-        handleClick = {selectAnswer}
+        handleClick = {() =>selectAnswer(question[0].id)}
       />
     )
     
