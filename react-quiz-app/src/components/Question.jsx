@@ -1,13 +1,11 @@
 import React from "react";
 
 export default function Question(props) {
-    console.log(props.answers)
     const arrayAnswers = Object.entries(props.answers[0]);
     const arrayTest = arrayAnswers.map(item=> {
         return  item[1] 
     })
 
-    
     const array = (arrayTest).sort((a,b) => 0.5 - Math.random());
    
     const Options = array.map(item => {
