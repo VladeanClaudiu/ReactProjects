@@ -17,12 +17,14 @@ function App() {
     setGameStart(oldGame => !oldGame)
   }
 
+  
   //fetch api data
   useEffect(() => {
     async function getQuiz(){
       const res = await fetch('https://opentdb.com/api.php?amount=6&type=multiple&encode=url3986')
       const data = await res.json();
       setQuizState(data.results)
+      console.log(data.results)
     }
     getQuiz();
   },[])
@@ -60,32 +62,6 @@ function App() {
   const selectAnswer = (id)=> {
     console.log('button Pressed')
     console.log(id)
-    // setQuizUsed(oldQuiz => oldQuiz.map(quiz => {
-    //   const quizObj = quiz[0].answers;
-    //   let newObj;
-    //   quiz[0].id === id ? 
-    //                       newObj = quizObj.map(item => {
-    //                         return quiz[0].id === id ? {
-    //                           ...item, selected: !item.selected
-    //                         }: "nope"
-    //                       })
-    //                      : console.log("nope")
-    //   return quiz[0].id === id ?
-    //                         [{...quiz[0],
-    //                           answers: newObj
-    // }] : 
-    //                       [quiz[0]]
-    // }))
-
-    // quizUsed.map(quiz=> {
-    //   const quizObj = quiz[0].answers;
-    //   console.log(quizObj)
-    //   quizObj.map(item => {
-    //     quiz[0].id === id? console.log(item.answer) : console.log("nope")
-        
-    //   })
-    // })
-
   }
 console.log(quizUsed)
   //map data and pass it to Question component as props
