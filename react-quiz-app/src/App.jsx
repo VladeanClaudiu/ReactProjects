@@ -90,9 +90,9 @@ function App() {
 console.log(quizUsed)
   //map data and pass it to Question component as props
   const quizQuestion = quizUsed.map(question=>{
-    const key = question[0];
+    const key = question;
     const answerArray = [question[0].answers];
-
+    console.log(answerArray)
     return(
       <Question  
         id = {key.id}
