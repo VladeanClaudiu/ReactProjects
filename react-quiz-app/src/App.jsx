@@ -3,14 +3,16 @@ import './App.css'
 import StartPage from './components/StartPage'
 import Question from './components/Question'
 import { useEffect } from 'react'
-import { nanoid } from 'nanoid'
+
 
 function App() {
   const [gameStart, setGameStart] = useState(false)
   //holds all the data fetched from api
-  const [quizState, setQuizState] = useState([])
-  //holds formated data for the componets use
-  const [quizUsed, setQuizUsed] = useState([])
+  const [quizQuestions, setQuizQuestions] = useState([])
+  //holds the question id and matching answer
+  const [answers, setAnswers] = useState({})
+  //holds score
+  const [score, setScore] = useState(null)
 
   //changes game state 
   function changeGameState() {
@@ -23,59 +25,49 @@ function App() {
     async function getQuiz(){
       const res = await fetch('https://opentdb.com/api.php?amount=6&type=multiple&encode=url3986')
       const data = await res.json();
-      setQuizState(data.results)
-      console.log(data.results)
+      setQuizQuestions(data.results)
     }
     getQuiz();
   },[])
 
-  //object formatting 
-  const quizUse = quizState.map(question => {
-    const answerArray = [];
-    const incorrectArray = [{answer : decodeURIComponent(question.correct_answer),
-                             correct : true,
-                             selected : false}];
-    question.incorrect_answers.map(answer => {
-      incorrectArray.push({
-        answer :decodeURIComponent(answer),
-        correct : false,
-        selected : false})
-    })
-
-    //array correct answer push
-    answerArray.push({
-                      id : nanoid(),
-                      question: decodeURIComponent(question.question),
-                      answers : [...incorrectArray],
-                    })
-    return answerArray
-  })
-
-  
-  //set quiz state
-  useEffect(() => {
-    setQuizUsed(quizUse)
-  },[quizState])
-
-
-  //setlect answer function
-  const selectAnswer = (id)=> {
-    console.log('button Pressed')
-    console.log(id)
+  function pickQuestionAnswer(questionID, answer){
+    console.log(questionID, answer)
+    setAnswers(prevAnswer => {
+      return { ...prevAnswer,
+         [questionID] : answer 
+      }
+    });
   }
-console.log(quizUsed)
+
+  function checkAnswers() {
+    const correctAnswers = quizQuestions.map((question) => {
+      return question.correct_answer;
+    });
+
+    console.log(correctAnswers)
+    const totalCorrect = correctAnswers.filter(
+      (correctAnswer, index) => {
+        return correctAnswer === answers[index]
+    }
+    
+    );
+    console.log(totalCorrect)
+    setScore(totalCorrect.length)
+  }
+
+
   //map data and pass it to Question component as props
-  const quizQuestion = quizUsed.map(question=>{
-    const key = question;
-    const answerArray = [question[0].answers];
-    console.log(answerArray)
+  const quizQuestion = quizQuestions.map((question, questionID)=>{
     return(
       <Question  
-        id = {key.id}
-        key = {key.id}
-        questionAsked = {decodeURIComponent(question[0].question)}
-        answers = {answerArray}
-        handleClick = {() =>selectAnswer(question[0].id)}
+        key = {questionID}
+        incorrectAnswers = {question.incorrect_answers}
+        correctAnswer = {question.correct_answer}
+        questionAsked = {decodeURIComponent(question.question)}
+        pickedQuestionAnswer = {answers[questionID]}
+        pickAnswer = {(answer) => 
+          pickQuestionAnswer(questionID, answer)
+        }
       />
     )
     
@@ -87,6 +79,10 @@ console.log(quizUsed)
       />}
       {gameStart && 
       <section className='question-section'>{quizQuestion}
+      <button
+            disabled = {quizQuestions.length !== Object.keys(answers).length}
+            className="check-button"
+            onClick={checkAnswers}>Check Answers</button>
       </section>}
      
     </main>
