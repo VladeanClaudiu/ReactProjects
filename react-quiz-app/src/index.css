@@ -89,6 +89,22 @@
  border: none;
 }
 
+.correct {
+  background-color: #94D7A2;
+  color: #293264;
+  border: none;
+}
+
+.disabled {
+  
+}
+
+.incorrect {
+  background-color: #F8BCBC;
+  color: #293264;
+  border: none;
+}
+
 .check-button {
   width: 120px;
   height: 45px;

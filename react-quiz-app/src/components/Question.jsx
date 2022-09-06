@@ -12,9 +12,17 @@ export default function Question(props) {
              <h3 className="question-head">{props.questionAsked}</h3>
             <div className="question-options">
                 {answerOption.map((option, index) =>(
-                        <button className={`option 
+                    
+                        <button
+                                disabled = {props.disabled}
+                                className={`option 
                                             ${props.pickedQuestionAnswer === option && "selected"}
                                             ${props.pickedQuestionAnswer === option && "selected"}
+                                            ${(props.correctAnswer === option &&
+                                               props.disabled) && "correct"}
+                                            ${(props.pickedQuestionAnswer === option &&
+                                                props.correctAnswer !== option &&
+                                            props.disabled) && "incorrect"}
                                             `}
                                 key={index}
                                 onClick={() =>props.pickAnswer(option)}>

@@ -54,13 +54,14 @@ function App() {
     console.log(totalCorrect)
     setScore(totalCorrect.length)
   }
-
+  console.log(answers)
 
   //map data and pass it to Question component as props
   const quizQuestion = quizQuestions.map((question, questionID)=>{
     return(
       <Question  
         key = {questionID}
+        disabled = {score !== null}
         incorrectAnswers = {question.incorrect_answers}
         correctAnswer = {question.correct_answer}
         questionAsked = {decodeURIComponent(question.question)}
