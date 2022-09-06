@@ -13,6 +13,9 @@ function App() {
   const [answers, setAnswers] = useState({})
   //holds score
   const [score, setScore] = useState(null)
+  //try again
+  const [tryState, setTryState] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
   //changes game state 
   function changeGameState() {
@@ -21,14 +24,18 @@ function App() {
 
   
   //fetch api data
+
   useEffect(() => {
     async function getQuiz(){
+      setIsLoading(true)
       const res = await fetch('https://opentdb.com/api.php?amount=6&type=multiple&encode=url3986')
       const data = await res.json();
       setQuizQuestions(data.results)
+      setIsLoading(false)
     }
-    getQuiz();
-  },[])
+  getQuiz(); 
+  },[tryState])
+
 
   function pickQuestionAnswer(questionID, answer){
     console.log(questionID, answer)
@@ -54,7 +61,13 @@ function App() {
     console.log(totalCorrect)
     setScore(totalCorrect.length)
   }
-  console.log(answers)
+
+  function tryAgain() {
+    console.log("Try")
+    setScore(null)
+    setAnswers({})
+    setTryState(oldTry => !oldTry)
+  }
 
   //map data and pass it to Question component as props
   const quizQuestion = quizQuestions.map((question, questionID)=>{
@@ -81,9 +94,12 @@ function App() {
       {gameStart && 
       <section className='question-section'>{quizQuestion}
       <button
-            disabled = {quizQuestions.length !== Object.keys(answers).length}
+            disabled={quizQuestion.length !== Object.keys(answers).length}
             className="check-button"
-            onClick={checkAnswers}>Check Answers</button>
+            onClick={score === null ? checkAnswers : tryAgain}
+            >{score === null ? "Check Answers" : "Try Again"}</button>
+            {score !== null && <p className='quiz-results'>You scored {score}/6 correct answers</p>}
+            {isLoading &&<p className='quiz-results'>Loading...</p>}
       </section>}
      
     </main>

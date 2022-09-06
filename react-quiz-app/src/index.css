@@ -93,10 +93,10 @@
   background-color: #94D7A2;
   color: #293264;
   border: none;
-}
-
-.disabled {
-  
+  font-style: normal;
+  font-weight: 500;
+  line-height: 12px;
+  text-align: center;
 }
 
 .incorrect {
@@ -117,4 +117,12 @@
   align-self: center;
   margin-top: 20px;
   cursor: pointer;
+}
+
+.quiz-results {
+  font-weight: 700;
+  font-size: 12.8px;
+  line-height: 15px;
+  text-align: center;
+  color: #293264;
 }

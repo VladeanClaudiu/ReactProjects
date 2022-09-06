@@ -17,12 +17,11 @@ export default function Question(props) {
                                 disabled = {props.disabled}
                                 className={`option 
                                             ${props.pickedQuestionAnswer === option && "selected"}
-                                            ${props.pickedQuestionAnswer === option && "selected"}
                                             ${(props.correctAnswer === option &&
                                                props.disabled) && "correct"}
                                             ${(props.pickedQuestionAnswer === option &&
-                                                props.correctAnswer !== option &&
-                                            props.disabled) && "incorrect"}
+                                               props.correctAnswer !== option &&
+                                               props.disabled) && "incorrect"}
                                             `}
                                 key={index}
                                 onClick={() =>props.pickAnswer(option)}>
