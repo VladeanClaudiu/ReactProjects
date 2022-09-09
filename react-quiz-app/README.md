@@ -23,8 +23,7 @@ Solo projects are meant to challenge the skills you've learnt so far through the
 
 ## Future improvements
 
-[ ] Design refactor   
-[ ] Code refactor: DRY   
+[ ] Design refactor 
 [ ] Ability to choose: number of questions, difficulty level & genre   
 
 
