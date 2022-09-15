@@ -21,3 +21,5 @@ Solo projects are meant to challenge the skills you've learnt so far through the
 - This project was bootstrapped with [Vite](https://vitejs.dev/)
 - The questions were pulled from the [Open Trivia Database API](https://opentdb.com/)
 
+## Live site below
+[Quizical](https://vladeanclaudiu.github.io/quizical-react-app/)
