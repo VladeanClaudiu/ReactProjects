@@ -9,3 +9,6 @@ The project is a game of tenzi, 10 dies are rolled and the player may click the 
 - CSS Grid, CSS Flexbox
 - Figma design files from Scrimba
 - This project was bootstrapped with [Vite](https://vitejs.dev/)
+
+## Live Demo
+[Tenzies React](https://vladeanclaudiu.github.io/react-tenzies-app/)
