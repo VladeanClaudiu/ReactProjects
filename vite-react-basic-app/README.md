@@ -1,6 +1,6 @@
 # Basic React App
 
-This is a project was the first time I used React 
+This is a project was the first time I used React, state change decides on dark vs light mode
 
 ## Built with
 
