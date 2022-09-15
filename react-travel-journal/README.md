@@ -17,3 +17,7 @@ Solo projects are meant to challenge the skills you've learnt so far through the
 - CSS Grid, CSS Flexbox
 - Mobile-first workflow
 - Figma design files from Scrimba
+
+## Live Site
+
+[Travel Journal](https://vladeanclaudiu.github.io/react-travel-journal/)
