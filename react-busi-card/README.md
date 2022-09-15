@@ -18,3 +18,5 @@ Solo projects are meant to challenge the skills you've learnt so far through the
 - Light and dark version
 - Figma design files from Scrimba
 
+## Live here
+[Business Card](https://vladeanclaudiu.github.io/react-digital-card)
